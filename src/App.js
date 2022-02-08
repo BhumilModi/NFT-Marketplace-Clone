@@ -12,18 +12,8 @@ function App() {
 
   useEffect(() => {
     const getNfts = async () => {
-      const openseaData = await axios(
+      const openseaData = await axios.get(
         'https://testnets-api.opensea.io/assets?order_direction=asc&asset_contract_address=0x8d812bE2db67Ad42746486f50F62Ea25D83eF4a4',
-        {
-          method: 'GET',
-          mode: 'no-cors',
-          headers: {
-            'Access-Control-Allow-Origin': '*',
-            'Content-Type': 'application/json',
-          },
-          withCredentials: true,
-          credentials: 'same-origin',
-        }
       )
       console.log(openseaData.data.assets)
       setCollectionData(openseaData.data.assets)
