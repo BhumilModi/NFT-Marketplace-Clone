@@ -14,7 +14,7 @@ function App() {
     const getNfts = async () => {
       const openseaData = await axios.get(
         'https://testnets-api.opensea.io/assets?order_direction=asc&asset_contract_address=0x8d812bE2db67Ad42746486f50F62Ea25D83eF4a4',
-        { crossdomain: true, headers: { 'Content-Type': 'application/json', } }
+        { mode: 'no-cors' }
       )
       console.log(openseaData.data.assets)
       setCollectionData(openseaData.data.assets)
