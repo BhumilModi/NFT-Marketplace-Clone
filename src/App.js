@@ -1,23 +1,38 @@
-import logo from './logo.svg';
 import './App.css';
+import Header from './Components/header';
+import { useState, useEffect } from 'react';
+import axios from 'axios';
+import Collection from './Components/Collection';
+import Hero from './Components/hero';
 
 function App() {
+
+  const [collectionData, setCollectionData] = useState([]);
+  const [selectedNft, setSelectedNft] = useState(0);
+
+  useEffect(() => {
+    const getNfts = async () => {
+      const openseaData = await axios.get(
+        'https://testnets-api.opensea.io/assets?order_direction=asc&asset_contract_address=0x8d812bE2db67Ad42746486f50F62Ea25D83eF4a4'
+      )
+      console.log(openseaData.data.assets)
+      setCollectionData(openseaData.data.assets)
+    }
+    return getNfts()
+  }, [])
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='app'>
+      <Header />
+      {
+        collectionData.length > 0 && (
+          <>
+            <Hero selectedNft={selectedNft} collectionData={collectionData} />
+            <Collection collectionData={collectionData} setSelectedNft={setSelectedNft} />
+          </>
+        )
+      }
+
     </div>
   );
 }
