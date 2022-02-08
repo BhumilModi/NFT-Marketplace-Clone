@@ -15,11 +15,15 @@ function App() {
       const openseaData = await axios.get(
         'https://testnets-api.opensea.io/assets?order_direction=asc&asset_contract_address=0x8d812bE2db67Ad42746486f50F62Ea25D83eF4a4',
         {
-          mode: 'no-cors', headers: {
+          mode: 'no-cors',
+          headers: {
             'Access-Control-Allow-Origin': '*',
             Accept: 'application/json',
             'Content-Type': 'application/json',
-          }
+          },
+          withCredentials: true,
+          credentials: 'same-origin',
+          crossdomain: true,
         }
       )
       console.log(openseaData.data.assets)
