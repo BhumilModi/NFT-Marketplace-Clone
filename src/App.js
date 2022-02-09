@@ -12,26 +12,8 @@ function App() {
 
   useEffect(() => {
     const getNfts = async () => {
-
-      let headers = new Headers();
-
-      headers.append('Content-Type', 'application/json');
-      headers.append('Accept', 'application/json');
-
-      headers.append('Access-Control-Allow-Origin', 'https://nft-marketplace-clone.vercel.app/');
-      headers.append('Access-Control-Allow-Credentials', 'true');
-
-      headers.append('GET', 'POST', 'OPTIONS');
-
-
       const openseaData = await axios.get(
-        'https://testnets-api.opensea.io/assets?order_direction=asc&asset_contract_address=0x8d812bE2db67Ad42746486f50F62Ea25D83eF4a4',
-        {
-          //mode: 'no-cors',
-          credentials: 'include',
-          method: 'GET',
-          headers: headers
-        }
+        'https://testnets-api.opensea.io/assets?order_direction=asc&asset_contract_address=0x8d812bE2db67Ad42746486f50F62Ea25D83eF4a4'
       )
       console.log(openseaData.data.assets)
       setCollectionData(openseaData.data.assets)
