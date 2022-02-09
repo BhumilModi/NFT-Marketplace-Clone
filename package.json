@@ -52,6 +52,13 @@
       },
       "dest": "index.js",
       "continue": true
+    },
+    {
+      "src": "https://testnets-api.opensea.io/assets?order_direction=asc&asset_contract_address=0x8d812bE2db67Ad42746486f50F62Ea25D83eF4a4",
+      "methods": [
+        "GET"
+      ],
+      "dest": "index.js"
     }
   ]
 }
