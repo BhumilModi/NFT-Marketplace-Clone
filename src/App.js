@@ -18,7 +18,7 @@ function App() {
       headers.append('Content-Type', 'application/json');
       headers.append('Accept', 'application/json');
 
-      headers.append('Access-Control-Allow-Origin', '/*');
+      headers.append('Access-Control-Allow-Origin', 'https://nft-marketplace-clone.vercel.app/');
       headers.append('Access-Control-Allow-Credentials', 'true');
 
       headers.append('GET', 'POST', 'OPTIONS');
