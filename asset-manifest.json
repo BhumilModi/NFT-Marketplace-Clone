@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/NFT-Marketplace-Clone/static/css/main.25f00cc3.css",
+    "main.js": "/NFT-Marketplace-Clone/static/js/main.3518a132.js",
+    "static/media/weth.png": "/NFT-Marketplace-Clone/static/media/weth.4101f1dacb92484cfd3f.png",
+    "static/media/cryptopunk-logo.png": "/NFT-Marketplace-Clone/static/media/cryptopunk-logo.8bee49d57faa44bb66f5.png",
+    "index.html": "/NFT-Marketplace-Clone/index.html",
+    "main.25f00cc3.css.map": "/NFT-Marketplace-Clone/static/css/main.25f00cc3.css.map",
+    "main.3518a132.js.map": "/NFT-Marketplace-Clone/static/js/main.3518a132.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.25f00cc3.css",
+    "static/js/main.3518a132.js"
+  ]
+}
